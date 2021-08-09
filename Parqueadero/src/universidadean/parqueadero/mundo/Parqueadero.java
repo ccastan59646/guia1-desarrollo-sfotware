@@ -1,7 +1,7 @@
 /**
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * Universidad Ean (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas
+ * Universidad Ean (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas
  * Licenciado bajo el esquema Academic Free License version 2.1
  * <p>
  * Proyecto: Parqueadero
@@ -19,27 +19,27 @@ public class Parqueadero {
     // -----------------------------------------------------------------
 
     /**
-     * Indica el número de puestos en el parqueadero.
+     * Indica el nï¿½mero de puestos en el parqueadero.
      */
     public static final int TAMANO = 40;
 
     /**
-     * Es el código de error para cuando el parqueadero está lleno.
+     * Es el cï¿½digo de error para cuando el parqueadero estï¿½ lleno.
      */
     public static final int NO_HAY_PUESTO = -1;
 
     /**
-     * Es el código de error para cuando el parqueadero está cerrado.
+     * Es el cï¿½digo de error para cuando el parqueadero estï¿½ cerrado.
      */
     public static final int PARQUEADERO_CERRADO = -2;
 
     /**
-     * Es el código de error para cuando el carro que se busca no está dentro del parqueadero.
+     * Es el cï¿½digo de error para cuando el carro que se busca no estï¿½ dentro del parqueadero.
      */
     public static final int CARRO_NO_EXISTE = -3;
 
     /**
-     * Es el código de error para cuando ya hay un carro en el parqueadero con la placa de un nuevo carro que va a entrar.
+     * Es el cï¿½digo de error para cuando ya hay un carro en el parqueadero con la placa de un nuevo carro que va a entrar.
      */
     public static final int CARRO_YA_EXISTE = -4;
 
@@ -63,7 +63,7 @@ public class Parqueadero {
     // -----------------------------------------------------------------
 
     /**
-     * Contenedora de tamaño fijo de puestos.
+     * Contenedora de tamaï¿½o fijo de puestos.
      */
     private Puesto puestos[];
 
@@ -92,8 +92,8 @@ public class Parqueadero {
     // -----------------------------------------------------------------
 
     /**
-     * Crea un parqueadero con su información básica. <br>
-     * <b>post: </b> Se creó un parqueadero abierto con la tarifa establecida y el arreglo de puestos está creado.
+     * Crea un parqueadero con su informaciï¿½n bï¿½sica. <br>
+     * <b>post: </b> Se creï¿½ un parqueadero abierto con la tarifa establecida y el arreglo de puestos estï¿½ creado.
      */
     public Parqueadero() {
         horaActual = HORA_INICIAL;
@@ -115,9 +115,9 @@ public class Parqueadero {
     /**
      * Retorna un mensaje con la placa del carro que se encuentra en la posici?n indicada.
      *
-     * @param pPosicion Posición del carro.
-     * @return Mensaje con la placa. Si no hay un carro en dicha posición retorna un mensaje indicando que no hay un
-     * carro en esa posición.
+     * @param pPosicion Posiciï¿½n del carro.
+     * @return Mensaje con la placa. Si no hay un carro en dicha posiciï¿½n retorna un mensaje indicando que no hay un
+     * carro en esa posiciï¿½n.
      */
     public String darPlacaCarro(int pPosicion) {
         String respuesta = "";
@@ -125,7 +125,7 @@ public class Parqueadero {
             respuesta = "Placa: " + puestos[pPosicion].darCarro().darPlaca();
         }
         else {
-            respuesta = "No hay un carro en esta posición";
+            respuesta = "No hay un carro en esta posiciï¿½n";
         }
 
         return respuesta;
@@ -133,13 +133,13 @@ public class Parqueadero {
 
     /**
      * Ingresa un un carro al parqueadero. <br>
-     * <b>pre: </b> El arreglo de puestos no está vacío. <br>
-     * <b>post: </b>El carro quedó parqueado en el puesto indicado.
+     * <b>pre: </b> El arreglo de puestos no estï¿½ vacï¿½o. <br>
+     * <b>post: </b>El carro quedï¿½ parqueado en el puesto indicado.
      *
      * @param pPlaca Placa del carro que ingresa. pPlaca != null.
      * @return Puesto en el que debe parquear. <br>
-     * Si el parqueadero está lleno retorna el valor NO_HAY_PUESTO. <br>
-     * Si el parqueadero está cerrado retorna el valor PARQUEADERO_CERRADO.
+     * Si el parqueadero estï¿½ lleno retorna el valor NO_HAY_PUESTO. <br>
+     * Si el parqueadero estï¿½ cerrado retorna el valor PARQUEADERO_CERRADO.
      */
     public int entrarCarro(String pPlaca) {
         int resultado = 0;
@@ -166,8 +166,8 @@ public class Parqueadero {
 
     /**
      * Sirve para sacar un carro del parqueadero y saber la cantidad de dinero que debe pagar. <br>
-     * <b>pre: </b> El arreglo de puestos no está vacío. <br>
-     * <b>post: </b> El carro salió del parqueadero y el puesto que ocupaba, ahora está libre.
+     * <b>pre: </b> El arreglo de puestos no estï¿½ vacï¿½o. <br>
+     * <b>post: </b> El carro saliï¿½ del parqueadero y el puesto que ocupaba, ahora estï¿½ libre.
      *
      * @param pPlaca Placa del carro que va a salir. pPlaca != null.
      * @return Retorna el valor a pagar. Si el carro no se encontraba dentro del parqueadero entonces retorna CARRO_NO_EXISTE. <br>
@@ -208,7 +208,7 @@ public class Parqueadero {
     /**
      * Indica la cantidad de puestos libres que hay.
      *
-     * @return El número de espacios vacíos en el parqueadero.
+     * @return El nï¿½mero de espacios vacï¿½os en el parqueadero.
      */
     public int calcularPuestosLibres() {
         int puestosLibres = 0;
@@ -232,7 +232,7 @@ public class Parqueadero {
     /**
      * Busca un puesto libre en el parqueadero y lo retorna. Si no encuentra retorna el valor NO_HAY_PUESTO.
      *
-     * @return Número del puesto libre encontrado.
+     * @return Nï¿½mero del puesto libre encontrado.
      */
     private int buscarPuestoLibre() {
         int puesto = NO_HAY_PUESTO;
@@ -245,11 +245,11 @@ public class Parqueadero {
     }
 
     /**
-     * Indica el número de puesto en el que se encuentra el carro con una placa dada. Si no lo encuentra retorna el
+     * Indica el nï¿½mero de puesto en el que se encuentra el carro con una placa dada. Si no lo encuentra retorna el
      * valor CARRO_NO_EXISTE.
      *
      * @param pPlaca Placa del carro que se busca. pPlaca != null.
-     * @return Número del puesto en el que se encuentra el carro.
+     * @return Nï¿½mero del puesto en el que se encuentra el carro.
      */
     private int buscarPuestoCarro(String pPlaca) {
         int puesto = CARRO_NO_EXISTE;
@@ -279,7 +279,7 @@ public class Parqueadero {
     }
 
     /**
-     * Indica si el parqueadero está abierto.
+     * Indica si el parqueadero estï¿½ abierto.
      *
      * @return Retorna true si el parqueadero est? abierto. False en caso contrario.
      */
@@ -290,14 +290,14 @@ public class Parqueadero {
     /**
      * Retorna la tarifa por hora del parqueadero.
      *
-     * @return La tarifa que se está aplicando en el parqueadero.
+     * @return La tarifa que se estï¿½ aplicando en el parqueadero.
      */
     public int darTarifa() {
         return tarifa;
     }
 
     /**
-     * Indica si un puesto está ocupado.
+     * Indica si un puesto estï¿½ ocupado.
      *
      * @param pPuesto El puesto que se quiere saber si est? ocupado. pPuesto >= 0 && pPuesto < puestos.length.
      * @return Retorna true si el puesto est? ocupado. False en caso contrario.
@@ -312,16 +312,24 @@ public class Parqueadero {
     // -----------------------------------------------------------------
 
     /**
-     * Método de extensión 1.
+     * Mï¿½todo de extensiï¿½n 1.
      *
      * @return Respuesta 1.
      */
     public String metodo1() {
-        return "respuesta 1";
+        int mayor = 0;
+        String placaCarroMayorPuesto = "";
+        for (puesto p: puestos) {
+            if(p.estaOcupado() && p.darNumeroPuesto() > mayor) {
+                mayor = p.darNumeroPuesto();
+                placaCarroMayorPuesto = p.darCarro().darPlaca();
+            }
+        }
+        return "";
     }
 
     /**
-     * Método de extensión 2.
+     * Mï¿½todo de extensiï¿½n 2.
      *
      * @return Respuesta 2.
      */
